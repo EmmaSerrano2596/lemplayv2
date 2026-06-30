@@ -498,11 +498,83 @@
     .btn-primary-inline { background: var(--pink); color: white; border: none; border-radius: var(--radius-pill); padding: 16px 44px; font-size: 16px; font-weight: 700; cursor: pointer; }
     .btn-primary-inline:hover { background: var(--pink-hover); }
 
+    /* REVIEWS — masonry grid */
+    .reviews-section { max-width: 1280px; margin: 0 auto; padding: 80px 48px; }
+    .reviews-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; gap: 12px; }
+    .rh-stars { color: #FFB74A; font-size: 22px; letter-spacing: 2px; }
+    .rh-count { font-size: 16px; font-weight: 600; color: var(--dark); margin-left: 10px; cursor: pointer; }
+    .rh-write-btn { background: transparent; border: 1.5px solid var(--dark); color: var(--dark); padding: 10px 24px; border-radius: var(--radius-pill); font-size: 14px; font-weight: 600; cursor: pointer; }
+    .rh-write-btn:hover { background: var(--dark); color: white; }
+    .reviews-masonry {
+      columns: 4;
+      column-gap: 20px;
+    }
+    .rm-card {
+      break-inside: avoid;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .rm-photo { width: 100%; display: block; object-fit: cover; }
+    .rm-card-body { padding: 18px; }
+    .rm-name { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+    .rm-verified { font-size: 12px; color: var(--dark-60); font-weight: 400; margin-left: 4px; }
+    .rm-date { font-size: 12px; color: var(--dark-60); margin-bottom: 6px; }
+    .rm-stars { color: #FFB74A; font-size: 13px; margin-bottom: 10px; }
+    .rm-text { font-size: 13px; color: var(--dark); line-height: 1.65; }
+    .rm-highlight { color: var(--pink); font-weight: 500; }
+
+    /* RELATED PRODUCTS — square images */
+    .related-section { background: var(--cream); padding: 72px 48px; }
+    .related-inner { max-width: 1280px; margin: 0 auto; }
+    .related-inner > h2 { font-family: var(--font-serif); font-size: 36px; margin-bottom: 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .related-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; transition: transform 0.2s; }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-img-wrap { position: relative; }
+    .related-save-badge { position: absolute; top: 12px; left: 12px; background: var(--pink); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: var(--radius-pill); z-index: 1; }
+    .related-img { width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; font-size: 72px; }
+    .related-img--yellow { background: #F5E642; }
+    .related-img--green  { background: #A8D08D; }
+    .related-img--pink   { background: #F8C8D4; }
+    .related-info { padding: 20px; text-align: center; }
+    .related-name { font-weight: 700; font-size: 16px; color: var(--pink); margin-bottom: 6px; }
+    .related-desc { font-size: 13px; color: var(--dark-60); margin-bottom: 12px; line-height: 1.55; }
+    .related-price-row { display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .related-price { font-weight: 700; font-size: 15px; color: var(--pink); }
+    .related-orig { font-size: 13px; color: var(--dark-60); text-decoration: line-through; }
+
+    /* FOOTER — reference layout */
+    footer { background: var(--cream); color: var(--dark); padding: 72px 48px 32px; border-top: 1px solid var(--border); }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-top-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; margin-bottom: 52px; align-items: start; }
+    .footer-logo { font-family: var(--font-serif); font-size: 44px; font-weight: 700; color: var(--pink); margin-bottom: 16px; }
+    .footer-nl-headline { font-family: var(--font-sans); font-size: 26px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; color: var(--dark); }
+    .footer-nl-sub { font-size: 14px; color: var(--dark-60); margin-bottom: 20px; line-height: 1.6; }
+    .nl-form { display: flex; gap: 8px; }
+    .nl-input { flex: 1; padding: 12px 18px; border-radius: var(--radius-pill); border: 1.5px solid var(--border); font-size: 14px; font-family: inherit; background: white; }
+    .nl-btn { background: var(--dark); color: white; border: none; padding: 12px 24px; border-radius: var(--radius-pill); font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; font-family: inherit; }
+    .footer-links-grid { display: grid; grid-template-columns: 2fr 1.5fr 1fr 1fr; gap: 32px; }
+    .footer-col h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+    .footer-about-text { font-size: 13px; color: var(--dark-60); line-height: 1.75; margin-bottom: 14px; }
+    .footer-col address { font-style: normal; font-size: 13px; color: var(--dark-60); line-height: 1.85; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; font-size: 14px; color: var(--dark-60); }
+    .footer-col li strong { color: var(--dark); }
+    .footer-col a { color: var(--dark-60); text-decoration: none; }
+    .footer-col a:hover { color: var(--pink); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; font-size: 13px; color: var(--dark-60); }
+
     /* FAQ */
     .faq-section { max-width: 1280px; margin: 0 auto; padding: 80px 48px; }
     .faq-section > h2 { font-family: var(--font-serif); font-size: 38px; text-align: center; margin-bottom: 8px; }
     .faq-sub { text-align: center; color: var(--dark-60); margin-bottom: 52px; }
     /* FAQ */
+    .faq-tabs-row { margin-bottom: 20px; }
+    .faq-tab-panel { display: none; }
+    .faq-tab-panel.active { display: block; }
     .faq-list { background: var(--pink-pale); border-radius: var(--radius-lg); padding: 8px 32px 24px; }
     .faq-group-label { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--pink); padding: 28px 0 10px; border-bottom: 2px solid rgba(255,48,204,0.15); margin-bottom: 4px; }
     .faq-item { border-bottom: 1px solid rgba(255,48,204,0.12); }
@@ -936,30 +1008,99 @@
     </div>
   </section>
 
+  
   <!-- REVIEWS -->
   <section class="reviews-section">
-    <h2>Join 800,000+ Women</h2>
-    <p class="reviews-sub">Who Decided to Come First</p>
-    <div class="filter-tabs">
-      <button class="filter-tab active">Powerful &amp; Effective</button>
-      <button class="filter-tab">Cute Design</button>
-      <button class="filter-tab">Discreet</button>
-      <button class="filter-tab">App-Controlled</button>
-      <button class="filter-tab">Couples Approved</button>
-      <button class="filter-tab">Beginner-Friendly</button>
+    <div class="reviews-header-row">
+      <div class="reviews-rating-summary">
+        <span class="rh-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rh-count">16,147 Reviews &#8964;</span>
+      </div>
+      <button class="rh-write-btn">Write a review</button>
     </div>
-    <div class="reviews-grid">
-      <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"Holy mother of God! I can't put this little sucker down. The app control my partner uses is just... words can't describe."</div><div class="review-author">- Kathryn R.</div><div class="review-verified">&#10003; Verified Buyer</div></div>
-      <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"I don't even need the highest speeds - the lower ones build beautifully. And when my partner takes over through the app? Electric."</div><div class="review-author">- Pebbs W.</div><div class="review-verified">&#10003; Verified Buyer</div></div>
-      <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-text">"It is amazing and super powerful. My wife loves it and now that I can control it through the app, it's changed our whole relationship."</div><div class="review-author">- Melissa E.</div><div class="review-verified">&#10003; Verified Buyer</div></div>
-    </div>
-    <div class="tiktok-grid">
-      <div class="tiktok-card" style="background:linear-gradient(160deg,#2d1b4e,#1a0a30)"><div class="tiktok-bg">&#127819;</div><div class="tiktok-play">&#9654;</div><div class="tiktok-caption">"Ohhhh Lem Play, oh Lem Play..."</div></div>
-      <div class="tiktok-card" style="background:linear-gradient(160deg,#1a2f1a,#0d1f0d)"><div class="tiktok-bg">&#128241;</div><div class="tiktok-play">&#9654;</div><div class="tiktok-caption">"He's in Paris, I'm in Manila, and somehow this still works."</div></div>
-      <div class="tiktok-card" style="background:linear-gradient(160deg,#3d1a1a,#1f0d0d)"><div class="tiktok-bg">&#128156;</div><div class="tiktok-play">&#9654;</div><div class="tiktok-caption">"She looks innocent... but she's about to get zesty."</div></div>
-      <div class="tiktok-card" style="background:linear-gradient(160deg,#1a1a3d,#0d0d1f)"><div class="tiktok-bg">&#127744;</div><div class="tiktok-play">&#9654;</div><div class="tiktok-caption">"Let's break the taboo around self pleasure."</div></div>
+
+    <div class="reviews-masonry">
+
+      <div class="rm-card rm-card--photo">
+        <img src="https://raw.githubusercontent.com/EmmaSerrano2596/lemplayv2/main/images/Main%20Image.jpg" alt="Customer photo" class="rm-photo">
+        <div class="rm-card-body">
+          <div class="rm-name">Jolien G. <span class="rm-verified">&#10003; Verified</span></div>
+          <div class="rm-date">6/5/2026</div>
+          <div class="rm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rm-text">My clitoris is quite sensitive to touch, but this lemon has enough settings to give you space to really feel and discover what works. I tend to have trouble reaching orgasm, and with this clitoris massager, that is absolutely no problem!</p>
+        </div>
+      </div>
+
+      <div class="rm-card rm-card--photo">
+        <img src="https://raw.githubusercontent.com/EmmaSerrano2596/lemplayv2/main/images/watermarked_img_11146658469809605707.jpg" alt="Customer photo" class="rm-photo">
+        <div class="rm-card-body">
+          <div class="rm-name">Carrie C. <span class="rm-verified">&#10003; Verified</span></div>
+          <div class="rm-date">6/5/2026</div>
+          <div class="rm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rm-text">Oh my goodness! This lemon has been an amazing addition to our bedtime routine! It is very gentle on the delicate tissue and <span class="rm-highlight">this lemon will take you for a ride...straight to "O'ville!"</span> My hubby loves to see my eyes roll into the back of my head!</p>
+        </div>
+      </div>
+
+      <div class="rm-card">
+        <div class="rm-card-body">
+          <div class="rm-name">Tawana S. <span class="rm-verified">&#10003; Verified</span></div>
+          <div class="rm-date">6/19/2026</div>
+          <div class="rm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rm-text">I just received my Lem and have already used it a couple of times — and I must say, this works so much better than I expected. "Under three minutes" is an understatement. As a postmenopausal woman, I honestly felt like satisfying orgasms were a thing of the past. This little lemon changed that.</p>
+        </div>
+      </div>
+
+      <div class="rm-card">
+        <div class="rm-card-body">
+          <div class="rm-name">Kristin <span class="rm-verified">&#10003; Verified</span></div>
+          <div class="rm-date">6/13/2026</div>
+          <div class="rm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rm-text">Never have been able to orgasm from penetration unfortunately but this lemon.....god this lemon...it has brought me back to life. <span class="rm-highlight">This thing has made me orgasm ten times in a row and I squirted for the first time ever.</span> The sensitivity this toy brings is amazing and if you're like me I want it strong. 100/10.</p>
+        </div>
+      </div>
+
+      <div class="rm-card rm-card--photo">
+        <img src="https://raw.githubusercontent.com/EmmaSerrano2596/lemplayv2/main/images/15246640976518230600.jpg" alt="Customer photo" class="rm-photo">
+        <div class="rm-card-body">
+          <div class="rm-name">P Dianne H. <span class="rm-verified">&#10003; Verified</span></div>
+          <div class="rm-date">6/2/2026</div>
+          <div class="rm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rm-text">I am only doing this review because I am SHOOK. This is the most powerful thing I have ever used. I had my first orgasm within 2 minutes of using it. Do not hesitate — just buy it!</p>
+        </div>
+      </div>
+
+      <div class="rm-card rm-card--photo">
+        <img src="https://raw.githubusercontent.com/EmmaSerrano2596/lemplayv2/main/images/watermarked_img_12928780331961004624.jpg" alt="Customer photo" class="rm-photo">
+        <div class="rm-card-body">
+          <div class="rm-name">Sarah M. <span class="rm-verified">&#10003; Verified</span></div>
+          <div class="rm-date">5/28/2026</div>
+          <div class="rm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rm-text">I honestly was skeptical but this little lemon is INCREDIBLE. My partner and I have been using the app feature and it has completely transformed our long-distance relationship. 10/10 would recommend to everyone.</p>
+        </div>
+      </div>
+
+      <div class="rm-card">
+        <div class="rm-card-body">
+          <div class="rm-name">Maria L. <span class="rm-verified">&#10003; Verified</span></div>
+          <div class="rm-date">5/15/2026</div>
+          <div class="rm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rm-text">The app control is genuinely mind-blowing. My partner lives in another country and being able to share this experience has kept us so much closer. The toy itself is whisper quiet and super discreet. Packaging was totally plain — nobody knew what it was.</p>
+        </div>
+      </div>
+
+      <div class="rm-card rm-card--photo">
+        <img src="https://raw.githubusercontent.com/EmmaSerrano2596/lemplayv2/main/images/b71c5e88-c8fe-4079-a114-659c8fee334d.jpg" alt="Customer photo" class="rm-photo">
+        <div class="rm-card-body">
+          <div class="rm-name">Jessica T. <span class="rm-verified">&#10003; Verified</span></div>
+          <div class="rm-date">5/10/2026</div>
+          <div class="rm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rm-text">Arrived fast, packaged so discreetly. The lemon design is so cute! Used it for the first time and honestly didn't expect it to be this effective. Already recommended it to three of my friends.</p>
+        </div>
+      </div>
+
     </div>
   </section>
+
 
   <!-- COMPARISON -->
   <section class="comparison-section">
@@ -986,140 +1127,187 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+    <!-- FAQ -->
   <section class="faq-section">
     <h2>FAQ's</h2>
     <p class="faq-sub">Curious to learn more? We've got you covered. Head to our <a href="#" style="color:var(--pink);">Nancy Help Center</a> for everything you need to know.</p>
+
+    <div class="section-tabs-row faq-tabs-row" role="tablist">
+      <button class="section-tab active" onclick="switchFaqTab(this,'faq-a')" role="tab">A. Lem Play</button>
+      <button class="section-tab" onclick="switchFaqTab(this,'faq-b')" role="tab">B. Nancy Play App</button>
+      <button class="section-tab" onclick="switchFaqTab(this,'faq-c')" role="tab">C. Bluetooth</button>
+      <button class="section-tab" onclick="switchFaqTab(this,'faq-d')" role="tab">D. Battery</button>
+      <button class="section-tab" onclick="switchFaqTab(this,'faq-e')" role="tab">E. Care</button>
+      <button class="section-tab" onclick="switchFaqTab(this,'faq-f')" role="tab">F. Ordering</button>
+    </div>
+
     <div class="faq-list">
 
-      <div class="faq-group-label">A. LEM PLAY</div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is Lem Play and how is it different from the original Lem?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play is the Bluetooth-enabled version of our original Lem clitoral massager. The hardware, design, silicone, and physical controls are exactly the same - the difference is that Lem Play connects to the free Nancy Play app via Bluetooth, giving you full app control over your experience. Same zesty lemon. A whole lot more control.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I set up Lem Play for the first time?<span class="faq-icon">&#8964;</span></button><div class="faq-a">It's a four-step process:<ol style="margin-top:10px;padding-left:20px;line-height:2;"><li>Press the power ("N") button to turn Lem Play on - the light will turn on.</li><li>Download the free Nancy Play app from the App Store or Google Play.</li><li>Open the app, tap <strong>Pair Device</strong>, and follow the pairing steps.</li><li>Once connected, the app unlocks full control - patterns, intensity, partner sharing, and more.</li></ol></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does Lem Play still have the same 12 settings?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes. All 12 intensities and patterns are still there, controlled the same way as the original Lem using the single power button. The app simply gives you a better way to navigate them - all 12 are visible on one screen so you can tap directly to the one you want instead of cycling through them one by one.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is Lem Play safe to use?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes. Lem Play is made from medical-grade silicone and has been clinically endorsed by Dr. Angela Wright, with 6 peer-reviewed studies supporting the technology behind it. It carries an IPX7 waterproof rating and operates below 50dB.</div></div>
+      <!-- A: Lem Play -->
+      <div id="faq-a" class="faq-tab-panel active">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is Lem Play and how is it different from the original Lem?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play is the Bluetooth-enabled version of our original Lem clitoral massager. The hardware, design, silicone, and physical controls are exactly the same - the difference is that Lem Play connects to the free Nancy Play app via Bluetooth, giving you full app control over your experience. Same zesty lemon. A whole lot more control.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I set up Lem Play for the first time?<span class="faq-icon">&#8964;</span></button><div class="faq-a">It's a four-step process:<ol style="margin-top:10px;padding-left:20px;line-height:2;"><li>Press the power ("N") button to turn Lem Play on - the light will turn on.</li><li>Download the free Nancy Play app from the App Store or Google Play.</li><li>Open the app, tap <strong>Pair Device</strong>, and follow the pairing steps.</li><li>Once connected, the app unlocks full control - patterns, intensity, partner sharing, and more.</li></ol></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does Lem Play still have the same 12 settings?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes. All 12 intensities and patterns are still there, controlled the same way as the original Lem using the single power button. The app simply gives you a better way to navigate them - all 12 are visible on one screen so you can tap directly to the one you want instead of cycling through them one by one.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is Lem Play safe to use?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes. Lem Play is made from medical-grade silicone and has been clinically endorsed by Dr. Angela Wright, with 6 peer-reviewed studies supporting the technology behind it. It carries an IPX7 waterproof rating and operates below 50dB.</div></div>
+      </div>
 
-      <div class="faq-group-label">B. NANCY PLAY APP</div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the Nancy Play app free?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes, the Nancy Play app is completely free to download and use.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Where do I download the Nancy Play app?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Search <strong>"Nancy Play"</strong> in your app store, or scan the QR code in the box.<br><br>Apple App Store: apps.apple.com/app/nancy-play-couples/id6763011010<br>Google Play: play.google.com/store/apps/details?id=com.app.hellonancy</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I'm having trouble pairing?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Open the Nancy Play app and go to <strong>Settings > Help &amp; Support</strong> for step-by-step guides. You can also reach our team at care@hellonancy.com.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need to keep my phone nearby for Lem Play to work?<span class="faq-icon">&#8964;</span></button><div class="faq-a">For Bluetooth pairing, your phone needs to be within approximately 10 metres. However, once paired, partner control uses your phone's internet connection - meaning a partner can control Lem Play from anywhere in the world as long as both phones have internet access.</div></div>
+      <!-- B: Nancy Play App -->
+      <div id="faq-b" class="faq-tab-panel">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the Nancy Play app free?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes, the Nancy Play app is completely free to download and use.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Where do I download the Nancy Play app?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Search <strong>"Nancy Play"</strong> in your app store, or scan the QR code in the box.<br><br>Apple App Store: apps.apple.com/app/nancy-play-couples/id6763011010<br>Google Play: play.google.com/store/apps/details?id=com.app.hellonancy</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I'm having trouble pairing?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Open the Nancy Play app and go to <strong>Settings &gt; Help &amp; Support</strong> for step-by-step guides. You can also reach our team at care@hellonancy.com.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need to keep my phone nearby for Lem Play to work?<span class="faq-icon">&#8964;</span></button><div class="faq-a">For Bluetooth pairing, your phone needs to be within approximately 10 metres. However, once paired, partner control uses your phone's internet connection - meaning a partner can control Lem Play from anywhere in the world as long as both phones have internet access.</div></div>
+      </div>
 
-      <div class="faq-group-label">C. BLUETOOTH CONNECTIVITY</div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What Bluetooth range does Lem Play support?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Standard Bluetooth range of approximately 10 metres between Lem Play and your phone. For partner control beyond that range, the app uses your internet connection - so range becomes unlimited as long as both users have internet access.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does Lem Play need to be connected to the app to work?<span class="faq-icon">&#8964;</span></button><div class="faq-a">No. Lem Play works exactly like the standard Lem even without the app - the power button and all 12 settings function the same way. The app is an added layer of control, not a requirement for basic use.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I use Lem Play in the shower while connected via Bluetooth?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play is IPX7 waterproof. However, Bluetooth connectivity may be affected by water. We recommend disconnecting from the app before using it in the shower or bath and reconnecting afterwards.</div></div>
+      <!-- C: Bluetooth -->
+      <div id="faq-c" class="faq-tab-panel">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What Bluetooth range does Lem Play support?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Standard Bluetooth range of approximately 10 metres between Lem Play and your phone. For partner control beyond that range, the app uses your internet connection - so range becomes unlimited as long as both users have internet access.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does Lem Play need to be connected to the app to work?<span class="faq-icon">&#8964;</span></button><div class="faq-a">No. Lem Play works exactly like the standard Lem even without the app - the power button and all 12 settings function the same way. The app is an added layer of control, not a requirement for basic use.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I use Lem Play in the shower while connected via Bluetooth?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play is IPX7 waterproof. However, Bluetooth connectivity may be affected by water. We recommend disconnecting from the app before using it in the shower or bath and reconnecting afterwards.</div></div>
+      </div>
 
-      <div class="faq-group-label">D. BATTERY AND CHARGING</div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does the battery last on Lem Play?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play provides 60-90 minutes of playtime per charge. Note: this is slightly reduced from the original Lem's 120-minute battery life due to the additional power used by the Bluetooth chip.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I charge Lem Play?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play charges via USB-C - the same cable used for most modern phones and devices. No proprietary cable required.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does a full charge take?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Charging time is the same as the original Lem. Refer to the manual for exact charge duration, or contact support via the app for guidance.</div></div>
+      <!-- D: Battery -->
+      <div id="faq-d" class="faq-tab-panel">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does the battery last on Lem Play?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play provides 60-90 minutes of playtime per charge. Note: this is slightly reduced from the original Lem's 120-minute battery life due to the additional power used by the Bluetooth chip.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I charge Lem Play?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play charges via USB-C - the same cable used for most modern phones and devices. No proprietary cable required.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does a full charge take?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Charging time is the same as the original Lem. Refer to the manual for exact charge duration, or contact support via the app for guidance.</div></div>
+      </div>
 
-      <div class="faq-group-label">E. CARE &amp; MAINTENANCE</div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I clean Lem Play?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play is IPX7 waterproof, so it can be rinsed with water. Use a toy-safe cleaner and allow it to dry fully before storing.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What type of lube should I use with Lem Play?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Use a water-based lubricant. Avoid silicone-based lubes as these can degrade medical-grade silicone over time. The Lem Play Insider Bundle includes a compatible lube specifically chosen to work with the silicone.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does Lem Play come with a warranty?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes. Lem Play comes with a 12-month warranty. For warranty claims or product issues, contact care@hellonancy.com.</div></div>
+      <!-- E: Care -->
+      <div id="faq-e" class="faq-tab-panel">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I clean Lem Play?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play is IPX7 waterproof, so it can be rinsed with water. Use a toy-safe cleaner and allow it to dry fully before storing.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What type of lube should I use with Lem Play?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Use a water-based lubricant. Avoid silicone-based lubes as these can degrade medical-grade silicone over time. The Lem Play Insider Bundle includes a compatible lube specifically chosen to work with the silicone.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does Lem Play come with a warranty?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes. Lem Play comes with a 12-month warranty. For warranty claims or product issues, contact care@hellonancy.com.</div></div>
+      </div>
 
-      <div class="faq-group-label">F. ORDERING &amp; SHIPPING</div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does HelloNancy ship internationally?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes. HelloNancy ships worldwide. Visit hellonancy.com for delivery options and estimated shipping times to your region.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the packaging discreet?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes. All HelloNancy orders are shipped in plain, unmarked packaging with no indication of the contents on the outside.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Where is Lem Play manufactured?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play is manufactured in China and distributed by Care &amp; Bloom Limited, Unit 1603, The L Plaza, 367 Queen's Road Central, Sheung Wan, Hong Kong.</div></div>
+      <!-- F: Ordering -->
+      <div id="faq-f" class="faq-tab-panel">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does HelloNancy ship internationally?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes. HelloNancy ships worldwide. Visit hellonancy.com for delivery options and estimated shipping times to your region.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the packaging discreet?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Yes. All HelloNancy orders are shipped in plain, unmarked packaging with no indication of the contents on the outside.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Where is Lem Play manufactured?<span class="faq-icon">&#8964;</span></button><div class="faq-a">Lem Play is manufactured in China and distributed by Care &amp; Bloom Limited, Unit 1603, The L Plaza, 367 Queen's Road Central, Sheung Wan, Hong Kong.</div></div>
+      </div>
 
     </div>
   </section>
 
 
+
+  
   <!-- RELATED PRODUCTS -->
   <section class="related-section">
     <div class="related-inner">
-      <h2>You might also love</h2>
+      <h2>You may also like</h2>
       <div class="related-grid">
+
         <div class="related-card">
-          <div class="related-img">ðŸ­</div>
+          <div class="related-img-wrap">
+            <span class="related-save-badge">Save $43</span>
+            <div class="related-img related-img--yellow">&#127978;</div>
+          </div>
           <div class="related-info">
-            <div class="related-badge">SAVE $43</div>
             <div class="related-name">Lolly Mini Wand</div>
             <div class="related-desc">A versatile mini wand for steady vibrations that hit every right spot.</div>
-            <div class="related-price-row"><span class="related-price">$44.00</span><span class="related-orig">$87.00</span></div>
+            <div class="related-price-row">
+              <span class="related-price">$44.00</span>
+              <span class="related-orig">$87.00</span>
+            </div>
           </div>
         </div>
+
         <div class="related-card">
-          <div class="related-img">ðŸ¥‘</div>
+          <div class="related-img-wrap">
+            <span class="related-save-badge">Save $63</span>
+            <div class="related-img related-img--green">&#129361;</div>
+          </div>
           <div class="related-info">
-            <div class="related-badge">SAVE $63</div>
             <div class="related-name">Avo Clitoral Massager</div>
             <div class="related-desc">A turbocharged clit suction with unmatched sensations for deep, powerful stimulation.</div>
-            <div class="related-price-row"><span class="related-price">$62.00</span><span class="related-orig">$125.00</span></div>
+            <div class="related-price-row">
+              <span class="related-price">$62.00</span>
+              <span class="related-orig">$125.00</span>
+            </div>
           </div>
         </div>
+
         <div class="related-card">
-          <div class="related-img">ðŸŽ</div>
+          <div class="related-img-wrap">
+            <span class="related-save-badge">Save $125</span>
+            <div class="related-img related-img--pink">&#127873;</div>
+          </div>
           <div class="related-info">
-            <div class="related-badge">SAVE $125</div>
             <div class="related-name">Oh-Oh-Oh Triple Bundle</div>
-            <div class="related-desc">The ultimate triple threat featuring air-suction, rumbly vibrations, and a sleek bullet.</div>
-            <div class="related-price-row"><span class="related-price">$125.00</span><span class="related-orig">$250.00</span></div>
+            <div class="related-desc">The ultimate triple threat featuring air-suction, rumbly vibrations, and a sleek bullet to hit every right spot.</div>
+            <div class="related-price-row">
+              <span class="related-price">$125.00</span>
+              <span class="related-orig">$250.00</span>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
-  <section class="newsletter-section">
-    <h2>Stories &amp; surprises straight to your inbox ðŸ’Œ</h2>
-    <p>Be the first to enjoy product launches, sweet discounts, and insider treats.</p>
-    <div class="nl-form">
-      <input type="email" class="nl-input" placeholder="Email address">
-      <button class="nl-btn">Subscribe</button>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>Nancy</h3>
-          <p>At Nancy, we're committed to breaking the taboo and creating a safe and welcoming space for everyone to explore their sexual curiosities.</p>
-          <address>
-            Care &amp; Bloom Limited,<br>
-            2F, Hilltop Plaza,<br>
-            49 Hollywood Rd, Central,<br>
-            Hong Kong.
-          </address>
+      <div class="footer-top-grid">
+
+        <div class="footer-nl-col">
+          <div class="footer-logo">Nancy</div>
+          <h3 class="footer-nl-headline">Stories &amp; surprises<br>straight to your inbox &#128140;</h3>
+          <p class="footer-nl-sub">Be the first to enjoy product launches, sweet discounts, and insider treats.</p>
+          <div class="nl-form">
+            <input type="email" class="nl-input" placeholder="Email address">
+            <button class="nl-btn">Subscribe</button>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Get in touch</h4>
-          <ul>
-            <li><a href="mailto:care@hellonancy.com">care@hellonancy.com</a></li>
-            <li><a href="mailto:marketing@hellonancy.com">marketing@hellonancy.com</a></li>
-          </ul>
+
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4>About</h4>
+            <p class="footer-about-text">At Nancy, we're committed to breaking the taboo and creating a safe and welcoming space for everyone to explore their sexual curiosities.</p>
+            <address>
+              Care &amp; Bloom Limited,<br>
+              2F, Hilltop Plaza,<br>
+              49 Hollywood Rd, Central,<br>
+              Hong Kong.
+            </address>
+          </div>
+          <div class="footer-col">
+            <h4>Get in touch</h4>
+            <ul>
+              <li><strong>Care:</strong> <a href="mailto:care@hellonancy.com">care@hellonancy.com</a></li>
+              <li><strong>Partnerships:</strong> <a href="mailto:marketing@hellonancy.com">marketing@hellonancy.com</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Guides</a></li>
+              <li><a href="#">Lem Comparison</a></li>
+              <li><a href="#">Wall of Came</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Help Center</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Guides</a></li>
-            <li><a href="#">Lem Play Comparison</a></li>
-            <li><a href="#">Wall of Came</a></li>
-            <li><a href="#">Sex Ed</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Policies</h4>
-          <ul>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Help Center</a></li>
-          </ul>
-        </div>
+
       </div>
       <div class="footer-bottom">
-        <span>Â© 2026, Hello Nancy | All rights reserved</span>
-        <span>ðŸ‡ºðŸ‡¸ USD ($)</span>
+        <span>&#169; 2026, Hello Nancy | All rights reserved</span>
+        <span>&#127482;&#127480; USD ($)</span>
       </div>
     </div>
   </footer>
+
 
   <script>
     function switchImage(thumbEl, src) {
@@ -1139,11 +1327,23 @@
     }
 
     function switchTab(btn, panelId) {
-      document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+      const row = btn.closest('.section-tabs-row');
+      row.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
       const panel = document.getElementById(panelId);
       if (panel) panel.classList.add('active');
+    }
+
+    function switchFaqTab(btn, panelId) {
+      const row = btn.closest('.section-tabs-row');
+      row.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.faq-tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const panel = document.getElementById(panelId);
+      if (panel) panel.classList.add('active');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    }
     }
 
     function toggleFaq(btn) {
