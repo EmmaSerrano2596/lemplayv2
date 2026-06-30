@@ -115,8 +115,8 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
       background: #f0ebe0;
-      aspect-ratio: 3 / 4;
-      max-height: 520px;
+      aspect-ratio: 1 / 1;
+      max-height: 560px;
       position: relative;
       display: flex;
       align-items: center;
@@ -517,7 +517,7 @@
       margin-bottom: 20px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
-    .rm-photo { width: 100%; display: block; object-fit: cover; }
+    .rm-photo { width: 100%; aspect-ratio: 1 / 1; display: block; object-fit: cover; }
     .rm-card-body { padding: 18px; }
     .rm-name { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
     .rm-verified { font-size: 12px; color: var(--dark-60); font-weight: 400; margin-left: 4px; }
@@ -615,7 +615,6 @@
     .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .related-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; transition: transform 0.2s; }
     .related-card:hover { transform: translateY(-2px); }
-    .related-img { width: 100%; aspect-ratio: 4/3; background: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 52px; }
     .related-info { padding: 22px; }
     .related-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--coral); margin-bottom: 4px; }
     .related-name { font-weight: 700; font-size: 17px; margin-bottom: 5px; }
