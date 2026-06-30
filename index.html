@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lem Play Bluetooth Clitoral Massager | Hello Nancy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink:         #FF30CC;
+      --pink-hover:   #e626b8;
+      --pink-light:   rgba(255, 48, 204, 0.08);
+      --pink-pale:    #FFF4FE;
+      --lime:         #CCFD28;
+      --cream:        #FCF7ED;
+      --dark:         #1A1A1A;
+      --dark-60:      rgba(26,26,26,0.6);
+      --dark-30:      rgba(26,26,26,0.3);
+      --coral:        #EA4264;
+      --light-rose:   #F3DCE2;
+      --yellow-strip: #FBF982;
+      --white:        #FFFFFF;
+      --border:       rgba(26,26,26,0.12);
+      --font-serif:   'Fraunces', Georgia, serif;
+      --font-sans:    'DM Sans', system-ui, sans-serif;
+      --radius-sm:    8px;
+      --radius-md:    16px;
+      --radius-lg:    24px;
+      --radius-pill:  100px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; }
+
+    /* ANNOUNCEMENT BAR */
+    .announcement-bar {
+      background: var(--pink);
+      color: white;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+    }
+    .announcement-bar .sep { margin: 0 14px; opacity: 0.6; }
+
+    /* LAUNCH BANNER */
+    .launch-banner {
+      background: var(--lime);
+      color: var(--dark);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .site-logo {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--pink);
+      text-decoration: none;
+    }
+    .site-nav { display: flex; gap: 32px; list-style: none; }
+    .site-nav a { font-size: 14px; font-weight: 500; color: var(--dark); text-decoration: none; }
+    .site-nav a:hover { color: var(--pink); }
+    .header-icons { display: flex; gap: 18px; font-size: 20px; cursor: pointer; }
+
+    /* PRODUCT HERO */
+    .product-hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 52px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    /* -----------------------------------------------
+       GALLERY  –  main image on top, thumbs below
+    ----------------------------------------------- */
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Main image */
+    .gallery-main-wrap {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #f0ebe0;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-main-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s;
+    }
+    .gallery-placeholder { font-size: 128px; opacity: 0.25; }
+
+    /* Thumbnail strip — horizontal row below main image */
+    .gallery-thumbs {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--pink) transparent;
+    }
+    .gallery-thumbs::-webkit-scrollbar { height: 4px; }
+    .gallery-thumbs::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 4px; }
+
+    .gallery-thumb {
+      width: 76px;
+      height: 76px;
+      flex-shrink: 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 2.5px solid transparent;
+      cursor: pointer;
+      transition: border-color 0.2s;
+      background: #f0ebe0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-thumb.active { border-color: var(--pink); }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-thumb .thumb-placeholder { font-size: 28px; opacity: 0.4; }
+
+    /* PRODUCT INFO */
+    .product-info { padding-top: 4px; }
+    .product-badge {
+      display: inline-block;
+      background: var(--pink);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 14px;
+    }
+    .product-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .stars { color: #FFB74A; letter-spacing: 1px; font-size: 15px; }
+    .rating-count { font-size: 14px; color: var(--dark-60); text-decoration: underline; cursor: pointer; }
+    .product-title {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.5px;
+      margin-bottom: 18px;
+    }
+    .product-price { margin-bottom: 22px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    .price-sale { font-size: 28px; font-weight: 700; }
+    .price-original { font-size: 18px; color: var(--dark-60); text-decoration: line-through; }
+    .price-note { width: 100%; font-size: 13px; color: var(--dark-60); margin-top: -10px; }
+
+    .press-row { margin-bottom: 18px; }
+    .press-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: var(--dark-60); margin-bottom: 7px; }
+    .press-logos { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+    .press-logo { font-size: 13px; font-weight: 700; color: var(--dark); opacity: 0.55; font-style: italic; }
+
+    .clinical-badges-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .clinical-badge {
+      background: var(--pink);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.5px;
+    }
+    .clinical-sub { font-size: 12.5px; color: var(--dark-60); margin-bottom: 20px; line-height: 1.7; }
+
+    .feature-icons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px; }
+    .feature-icon { display: flex; align-items: flex-start; gap: 8px; font-size: 13.5px; font-weight: 500; line-height: 1.4; }
+    .feature-icon .fi { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+
+    .product-description { font-size: 15px; line-height: 1.75; color: var(--dark-60); margin-bottom: 22px; }
+
+    .promo-box {
+      border: 2px dashed var(--pink);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      background: var(--pink-light);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      width: 100%;
+      background: var(--pink);
+      color: white;
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 18px 32px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+      margin-bottom: 12px;
+    }
+    .btn-primary:hover { background: var(--pink-hover); }
+    .btn-shop-pay {
+      width: 100%;
+      background: #5A31F4;
+      color: white;
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 16px 32px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .btn-more {
+      width: 100%;
+      background: transparent;
+      color: var(--dark-60);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 13px 32px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* -----------------------------------------------
+       DOCTOR REVIEW  –  full-width standalone section
+    ----------------------------------------------- */
+    .doctor-section {
+      background: var(--pink-pale);
+      padding: 72px 48px;
+    }
+    .doctor-section-inner { max-width: 1280px; margin: 0 auto; }
+    .doctor-section-inner > .section-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+    .doctor-section-inner > h2 {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      margin-bottom: 48px;
+    }
+    .doctor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .doctor-quote-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      border-left: 5px solid var(--pink);
+      box-shadow: 0 4px 24px rgba(255,48,204,0.08);
+    }
+    .doctor-photo-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .doctor-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--light-rose);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      flex-shrink: 0;
+    }
+    .doctor-name { font-weight: 700; font-size: 16px; margin-bottom: 2px; }
+    .doctor-title { font-size: 13px; color: var(--dark-60); line-height: 1.5; }
+    .doctor-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #E8FFF0;
+      color: #1A8C3C;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      margin-top: 6px;
+    }
+    .doctor-quote-text {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--dark);
+    }
+
+    .evidence-col { }
+    .evidence-h { font-family: var(--font-serif); font-size: 24px; margin-bottom: 28px; }
+    .evidence-item { border-left: 3px solid var(--pink); padding-left: 16px; margin-bottom: 24px; }
+    .evidence-item h4 { font-size: 13.5px; font-weight: 700; margin-bottom: 5px; }
+    .evidence-item p { font-size: 13.5px; color: var(--dark-60); line-height: 1.65; }
+    .evidence-citation { font-size: 12px; color: var(--pink); font-weight: 600; margin-top: 4px; }
+    .evidence-disclaimer { font-size: 12px; color: var(--dark-30); margin-top: 20px; line-height: 1.6; }
+
+    /* TABS SECTION (for other info tabs below doctor) */
+    .tabs-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 72px 48px;
+    }
+    .section-tabs-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #f6dde8;
+      border-radius: 32px;
+      padding: 8px;
+      margin: 24px 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .section-tabs-row::-webkit-scrollbar { display: none; }
+    .section-tab {
+      border: none;
+      background: transparent;
+      color: #ff33c7;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 14px 20px;
+      border-radius: 24px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all .2s ease;
+    }
+    .section-tab:hover { background: rgba(255,255,255,.4); }
+    .section-tab.active {
+      background: #ffffff;
+      color: #ff33c7;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Specs */
+    .specs-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius-md); overflow: hidden; }
+    .specs-table tr:not(:last-child) { border-bottom: 1px solid var(--border); }
+    .specs-table td { padding: 14px 20px; font-size: 15px; }
+    .specs-table td:first-child { font-weight: 600; width: 38%; color: var(--dark-60); }
+
+    /* How to use */
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .how-card { background: var(--pink-pale); border-radius: var(--radius-md); padding: 28px 20px; text-align: center; }
+    .how-num { width: 40px; height: 40px; background: var(--pink); color: white; border-radius: 50%; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
+    .how-icon { font-size: 32px; margin-bottom: 10px; }
+    .how-title { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+    .how-desc { font-size: 13px; color: var(--dark-60); line-height: 1.55; }
+
+    /* Intensity */
+    .intensity-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .intensity-card { background: var(--pink-light); border-radius: var(--radius-md); padding: 20px 14px; text-align: center; }
+    .intensity-card .i-icon { font-size: 26px; margin-bottom: 8px; }
+    .intensity-card .i-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .intensity-card .i-desc { font-size: 12px; color: var(--dark-60); }
+
+    /* Discreet */
+    .discreet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .discreet-list { display: flex; flex-direction: column; gap: 14px; background: var(--cream); border-radius: var(--radius-lg); padding: 32px; }
+    .discreet-item { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; }
+    .discreet-item .di { font-size: 22px; }
+
+    /* Couples */
+    .couples-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .couples-card { background: var(--pink-pale); border-radius: var(--radius-lg); padding: 36px; }
+    .couples-card .cc-icon { font-size: 36px; margin-bottom: 16px; }
+    .couples-card h4 { font-family: var(--font-serif); font-size: 22px; margin-bottom: 14px; }
+    .couples-list { display: flex; flex-direction: column; gap: 10px; }
+    .couples-list-item { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+    .how-note { background: var(--cream); border-radius: var(--radius-sm); padding: 12px 16px; font-size: 13px; color: var(--dark-60); margin-top: 18px; line-height: 1.6; }
+
+    /* YELLOW STRIP */
+    .yellow-strip { background: var(--yellow-strip); padding: 22px 48px; }
+    .strip-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .strip-item { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; }
+    .strip-item .si { font-size: 24px; }
+
+    /* EXPERT SECTION */
+    .expert-section { max-width: 1280px; margin: 0 auto; padding: 80px 48px; }
+    .expert-section > h2 { font-family: var(--font-serif); font-size: 38px; text-align: center; margin-bottom: 8px; }
+    .expert-sub { text-align: center; color: var(--dark-60); margin-bottom: 48px; font-size: 16px; }
+    .expert-card { display: flex; gap: 52px; align-items: center; background: var(--white); border-radius: var(--radius-lg); padding: 52px; box-shadow: 0 4px 28px rgba(0,0,0,0.07); }
+    .expert-photo { width: 152px; height: 152px; border-radius: 50%; background: var(--light-rose); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 60px; }
+    .expert-quote { font-family: var(--font-serif); font-size: 22px; font-style: italic; line-height: 1.6; margin-bottom: 20px; }
+    .expert-name { font-weight: 700; font-size: 16px; margin-bottom: 2px; }
+    .expert-cred { font-size: 13px; color: var(--dark-60); }
+    .verified-chip { display: inline-flex; align-items: center; gap: 5px; background: #E8FFF0; color: #1A8C3C; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: var(--radius-pill); margin-top: 10px; }
+
+    /* CLINICAL STATS */
+    .stats-section { background: var(--dark); color: white; padding: 80px 48px; }
+    .stats-inner { max-width: 1280px; margin: 0 auto; }
+    .stats-inner > h2 { font-family: var(--font-serif); font-size: 36px; color: white; margin-bottom: 10px; }
+    .stats-inner > .stats-p { color: rgba(255,255,255,0.6); font-size: 16px; line-height: 1.7; margin-bottom: 52px; max-width: 700px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .stat-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-md); padding: 32px 20px; text-align: center; }
+    .stat-num { font-family: var(--font-serif); font-size: 56px; font-weight: 700; color: var(--pink); line-height: 1; margin-bottom: 8px; }
+    .stat-lbl { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.55; }
+    .stat-cite { font-size: 11.5px; opacity: 0.45; }
+    .stats-cta { text-align: center; margin-top: 44px; }
+    .btn-outline-white { border: 1.5px solid rgba(255,255,255,0.3); color: white; background: transparent; padding: 14px 36px; border-radius: var(--radius-pill); font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.08); }
+    .stats-disclaimer { text-align: center; font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 28px; line-height: 1.6; }
+
+    /* REVIEWS */
+    .reviews-section { max-width: 1280px; margin: 0 auto; padding: 80px 48px; }
+    .reviews-section > h2 { font-family: var(--font-serif); font-size: 44px; margin-bottom: 4px; }
+    .reviews-sub { font-size: 16px; color: var(--dark-60); margin-bottom: 32px; }
+    .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 44px; }
+    .filter-tab { padding: 8px 20px; border-radius: var(--radius-pill); border: 1.5px solid var(--border); background: transparent; font-size: 13px; font-weight: 600; cursor: pointer; }
+    .filter-tab.active { background: var(--dark); color: white; border-color: var(--dark); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 60px; }
+    .review-card { background: var(--white); border-radius: var(--radius-lg); padding: 30px; box-shadow: 0 2px 14px rgba(0,0,0,0.06); }
+    .review-stars { color: #FFB74A; font-size: 14px; margin-bottom: 12px; }
+    .review-text { font-size: 15px; line-height: 1.7; font-style: italic; margin-bottom: 16px; }
+    .review-author { font-weight: 700; font-size: 14px; }
+    .review-verified { font-size: 12px; color: var(--dark-60); margin-top: 2px; }
+
+    .tiktok-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .tiktok-card { border-radius: var(--radius-md); aspect-ratio: 9/16; display: flex; align-items: flex-end; padding: 18px 14px; cursor: pointer; position: relative; overflow: hidden; }
+    .tiktok-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 72px; opacity: 0.2; }
+    .tiktok-caption { font-size: 13px; color: white; line-height: 1.4; font-style: italic; position: relative; z-index: 1; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+    .tiktok-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; z-index: 1; }
+
+    /* COMPARISON TABLE */
+    .comparison-section { padding: 80px 48px; background: var(--cream); }
+    .comparison-inner { max-width: 1280px; margin: 0 auto; }
+    .comparison-inner > h2 { font-family: var(--font-serif); font-size: 38px; text-align: center; margin-bottom: 8px; }
+    .comp-sub { text-align: center; color: var(--dark-60); margin-bottom: 4px; }
+    .comp-meta { text-align: center; font-size: 12px; color: var(--dark-30); margin-bottom: 36px; }
+    .comp-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 32px; }
+    .ct-tab { padding: 8px 26px; border-radius: var(--radius-pill); border: 1.5px solid var(--border); background: transparent; font-size: 14px; font-weight: 600; cursor: pointer; }
+    .ct-tab.active { background: var(--dark); color: white; border-color: var(--dark); }
+    .comp-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+    .comp-table thead { background: var(--pink); }
+    .comp-table th { padding: 18px 20px; font-size: 13.5px; font-weight: 700; color: white; text-align: center; }
+    .comp-table th:first-child { text-align: left; }
+    .comp-table th.us { background: var(--dark); }
+    .comp-table td { padding: 14px 20px; font-size: 14px; text-align: center; border-bottom: 1px solid var(--border); }
+    .comp-table td:first-child { text-align: left; font-weight: 600; color: var(--dark-60); }
+    .comp-table .us-col { background: rgba(255,48,204,0.04); }
+    .comp-table tbody tr:last-child td { border-bottom: none; }
+    .comp-table .us-col strong { color: var(--pink); }
+    .ck { color: #22c55e; font-size: 17px; }
+    .cx { color: #ef4444; font-size: 17px; }
+    .cn { color: var(--dark-30); }
+    .comp-cta { text-align: center; margin-top: 44px; }
+    .comp-cta p { color: var(--dark-60); margin-bottom: 16px; font-size: 15px; }
+    .btn-primary-inline { background: var(--pink); color: white; border: none; border-radius: var(--radius-pill); padding: 16px 44px; font-size: 16px; font-weight: 700; cursor: pointer; }
+    .btn-primary-inline:hover { background: var(--pink-hover); }
+
+    /* FAQ */
+    .faq-section { max-width: 1280px; margin: 0 auto; padding: 80px 48px; }
+    .faq-section > h2 { font-family: var(--font-serif); font-size: 38px; text-align: center; margin-bottom: 8px; }
+    .faq-sub { text-align: center; color: var(--dark-60); margin-bottom: 52px; }
+    .faq-list { max-width: 820px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: transparent; border: none; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; color: var(--dark); gap: 16px; }
+    .faq-icon { font-size: 22px; color: var(--pink); flex-shrink: 0; transition: transform 0.2s; font-weight: 400; }
+    .faq-a { display: none; font-size: 15px; color: var(--dark-60); line-height: 1.75; padding-bottom: 22px; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* RELATED PRODUCTS */
+    .related-section { background: var(--light-rose); padding: 72px 48px; }
+    .related-inner { max-width: 1280px; margin: 0 auto; }
+    .related-inner > h2 { font-family: var(--font-serif); font-size: 32px; margin-bottom: 40px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; transition: transform 0.2s; }
+    .related-card:hover { transform: translateY(-2px); }
+    .related-img { width: 100%; aspect-ratio: 4/3; background: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 52px; }
+    .related-info { padding: 22px; }
+    .related-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--coral); margin-bottom: 4px; }
+    .related-name { font-weight: 700; font-size: 17px; margin-bottom: 5px; }
+    .related-desc { font-size: 13px; color: var(--dark-60); margin-bottom: 14px; line-height: 1.5; }
+    .related-price-row { display: flex; align-items: center; gap: 10px; }
+    .related-price { font-weight: 700; font-size: 16px; }
+    .related-orig { font-size: 13px; color: var(--dark-60); text-decoration: line-through; }
+
+    /* NEWSLETTER */
+    .newsletter-section { background: var(--pink); padding: 72px 48px; text-align: center; color: white; }
+    .newsletter-section > h2 { font-family: var(--font-serif); font-size: 36px; margin-bottom: 8px; }
+    .newsletter-section > p { font-size: 16px; opacity: 0.85; margin-bottom: 32px; }
+    .nl-form { display: flex; gap: 10px; max-width: 480px; margin: 0 auto; }
+    .nl-input { flex: 1; padding: 14px 22px; border-radius: var(--radius-pill); border: none; font-size: 15px; font-family: inherit; }
+    .nl-btn { background: var(--dark); color: white; border: none; padding: 14px 28px; border-radius: var(--radius-pill); font-size: 15px; font-weight: 700; cursor: pointer; white-space: nowrap; font-family: inherit; }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: white; padding: 64px 48px 32px; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 52px; }
+    .footer-brand h3 { font-family: var(--font-serif); font-size: 28px; color: var(--pink); margin-bottom: 14px; }
+    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.75; margin-bottom: 18px; }
+    .footer-brand address { font-style: normal; font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.85; }
+    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.35); }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .site-header { padding: 0 24px; }
+      .site-nav { display: none; }
+      .product-hero { grid-template-columns: 1fr; padding: 28px 24px; gap: 36px; }
+      .doctor-section { padding: 52px 24px; }
+      .doctor-grid { grid-template-columns: 1fr; gap: 40px; }
+      .discreet-grid, .couples-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr 1fr; }
+      .intensity-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .tiktok-grid { grid-template-columns: 1fr 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .yellow-strip, .expert-section, .stats-section,
+      .reviews-section, .comparison-section, .faq-section,
+      .related-section, .newsletter-section { padding-left: 24px; padding-right: 24px; }
+      .expert-card { flex-direction: column; padding: 32px; }
+    }
+    @media (max-width: 600px) {
+      .product-title { font-size: 32px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; }
+      .tiktok-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .nl-form { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    Free shipping<span class="sep">·</span>Discreet packaging<span class="sep">·</span>30-day guarantee
+  </div>
+
+  <!-- LAUNCH BANNER -->
+  <div class="launch-banner">
+    🎉 Introducing Lem Play — Control the fun, from anywhere. Shop now.
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="#" class="site-logo">Nancy</a>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Sex Ed</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons" aria-label="Account and cart">
+      <span title="Chat">💬</span>
+      <span title="Account">👤</span>
+      <span title="Cart">🛒</span>
+    </div>
+  </header>
+
+  <!-- PRODUCT HERO -->
+  <section class="product-hero">
+
+    <!-- Gallery: main image on top, thumbnails horizontal strip below -->
+    <div class="gallery">
+      <div class="gallery-main-wrap" id="gallery-main">
+        <img id="main-img"
+          src="images/Main Image.jpg"
+          alt="Lem Play Clitoral Massager"
+          onerror="this.style.display='none'; document.getElementById('gallery-placeholder').style.display='flex'">
+        <div id="gallery-placeholder" class="gallery-placeholder" style="display:none">🍋</div>
+      </div>
+
+      <!-- Horizontal thumbnail strip -->
+      <div class="gallery-thumbs" id="thumb-rail">
+        <div class="gallery-thumb active" onclick="switchImage(this,'images/Main Image.jpg')">
+          <img src="images/Main Image.jpg" alt="Main view"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="thumb-placeholder" style="display:none">🍋</span>
+        </div>
+        <div class="gallery-thumb" onclick="switchImage(this,'images/15246640976518230600.jpg')">
+          <img src="images/15246640976518230600.jpg" alt="View 2"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="thumb-placeholder" style="display:none">🍋</span>
+        </div>
+        <div class="gallery-thumb" onclick="switchImage(this,'images/watermarked_img_11146658469809605707.jpg')">
+          <img src="images/watermarked_img_11146658469809605707.jpg" alt="View 3"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="thumb-placeholder" style="display:none">🍋</span>
+        </div>
+        <div class="gallery-thumb" onclick="switchImage(this,'images/watermarked_img_12928780331961004624.jpg')">
+          <img src="images/watermarked_img_12928780331961004624.jpg" alt="View 4"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="thumb-placeholder" style="display:none">🍋</span>
+        </div>
+        <div class="gallery-thumb" onclick="switchImage(this,'images/b71c5e88-c8fe-4079-a114-659c8fee334d.jpg')">
+          <img src="images/b71c5e88-c8fe-4079-a114-659c8fee334d.jpg" alt="View 5"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="thumb-placeholder" style="display:none">🍋</span>
+        </div>
+        <div class="gallery-thumb" onclick="switchImage(this,'images/6dd55d97-7ba4-4931-8fe7-2ff01623d781.jpg')">
+          <img src="images/6dd55d97-7ba4-4931-8fe7-2ff01623d781.jpg" alt="View 6"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="thumb-placeholder" style="display:none">🍋</span>
+        </div>
+        <div class="gallery-thumb" onclick="switchImage(this,'images/1bf2813c-cb80-4eb4-8743-53e11d3ad6ea.jpg')">
+          <img src="images/1bf2813c-cb80-4eb4-8743-53e11d3ad6ea.jpg" alt="View 7"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="thumb-placeholder" style="display:none">🍋</span>
+        </div>
+        <div class="gallery-thumb" onclick="switchImage(this,'images/IMG_3324.webp')">
+          <img src="images/IMG_3324.webp" alt="View 8"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="thumb-placeholder" style="display:none">🍋</span>
+        </div>
+        <div class="gallery-thumb" onclick="switchImage(this,'images/563f3c6e-e8b4-4d45-9435-9d979ec1506a.jpg')">
+          <img src="images/563f3c6e-e8b4-4d45-9435-9d979ec1506a.jpg" alt="View 9"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="thumb-placeholder" style="display:none">🍋</span>
+        </div>
+        <div class="gallery-thumb" onclick="switchImage(this,'images/3967356248142797334.jpg')">
+          <img src="images/3967356248142797334.jpg" alt="View 10"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="thumb-placeholder" style="display:none">🍋</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+      <span class="product-badge">✦ NEW · BLUETOOTH EDITION</span>
+
+      <div class="product-rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-count">4.8 (16,132 reviews)</span>
+      </div>
+
+      <h1 class="product-title">Lem Play<br>Clitoral Massager</h1>
+
+      <div class="product-price">
+        <span class="price-sale">$99.00 USD</span>
+        <span class="price-original">$120.00 USD</span>
+        <div class="price-note">Tax included. Shipping calculated at checkout.</div>
+      </div>
+
+      <div class="press-row">
+        <div class="press-label">AS SEEN IN</div>
+        <div class="press-logos">
+          <span class="press-logo">The Guardian</span>
+          <span class="press-logo">Vice</span>
+          <span class="press-logo">Tatler</span>
+          <span class="press-logo">NBC</span>
+          <span class="press-logo">CBS</span>
+        </div>
+      </div>
+
+      <div class="clinical-badges-row">
+        <span class="clinical-badge">CLINICALLY RECOGNIZED</span>
+      </div>
+      <div class="clinical-sub">
+        🌍 Recognized by menopause specialists &nbsp;·&nbsp;
+        💪 Used in pelvic floor wellness &nbsp;·&nbsp;
+        📖 Backed by 6 peer-reviewed studies
+      </div>
+
+      <div class="feature-icons">
+        <div class="feature-icon"><span class="fi">🔵</span><span>Bluetooth-enabled for app control</span></div>
+        <div class="feature-icon"><span class="fi">📱</span><span>Nancy Play App (iOS &amp; Android)</span></div>
+        <div class="feature-icon"><span class="fi">🌀</span><span>12 unique intensities &amp; patterns</span></div>
+        <div class="feature-icon"><span class="fi">🤫</span><span>Quiet &amp; discreet (Shhh!)</span></div>
+        <div class="feature-icon"><span class="fi">💛</span><span>Medical-grade silicone</span></div>
+        <div class="feature-icon"><span class="fi">💦</span><span>Waterproof · USB-C charging</span></div>
+        <div class="feature-icon"><span class="fi">🔋</span><span>60–90 min battery life</span></div>
+        <div class="feature-icon"><span class="fi">💑</span><span>Long-distance partner play via app</span></div>
+      </div>
+
+      <p class="product-description">
+        Meet Lem Play — your zesty lemon playmate, now with a whole new dimension of fun. Everything you loved about Lem, upgraded with Bluetooth and the Nancy Play app. Hand the controls to your partner across the room or across the world. With 12 unique intensities and patterns and whisper-quiet operation, Lem Play is the perfect choice for solo sessions and couple adventures alike.
+      </p>
+
+      <div class="promo-box">
+        💌 Save 20% with code <strong>"LEMPLAY20"</strong>
+      </div>
+
+      <button class="btn-primary">ADD TO CART — $99</button>
+      <button class="btn-shop-pay">Buy with 💜 Shop Pay</button>
+      <button class="btn-more">MORE PAYMENT OPTIONS</button>
+    </div>
+
+  </section>
+
+  <!-- YELLOW STRIP -->
+  <div class="yellow-strip">
+    <div class="strip-inner">
+      <div class="strip-item"><span class="si">🌀</span><span>12 unique patterns</span></div>
+      <div class="strip-item"><span class="si">💦</span><span>Waterproof</span></div>
+      <div class="strip-item"><span class="si">📦</span><span>Discreet shipping</span></div>
+      <div class="strip-item"><span class="si">📱</span><span>App-controlled</span></div>
+      <div class="strip-item"><span class="si">🔋</span><span>60–90 min battery</span></div>
+    </div>
+  </div>
+
+  <!-- DOCTOR REVIEW — full-width visible section -->
+  <section class="doctor-section">
+    <div class="doctor-section-inner">
+      <div class="section-eyebrow">Expert Endorsement</div>
+      <h2>Recommended by a Doctor</h2>
+      <div class="doctor-grid">
+        <div class="doctor-quote-card">
+          <div class="doctor-photo-row">
+            <div class="doctor-avatar">👩‍⚕️</div>
+            <div>
+              <div class="doctor-name">Dr. Angela Wright</div>
+              <div class="doctor-title">GP, Clinical Sexologist, and<br>BMS Registered Menopause Specialist</div>
+              <span class="doctor-verified">✓ Clinically Supported</span>
+            </div>
+          </div>
+          <div class="doctor-quote-text">
+            "As a doctor who focuses on sexual health, I frequently recommend the Lem as a high-quality, beginner-friendly suction toy. The Bluetooth-connected Lem Play adds a meaningful dimension for couples and long-distance partners — I'm excited to see how this evolves."
+          </div>
+        </div>
+
+        <div class="evidence-col">
+          <h3 class="evidence-h">The Clinical Evidence Behind Her Recommendation</h3>
+          <div class="evidence-item">
+            <h4>🌸 MENOPAUSE</h4>
+            <p>When arousal physically changes after 45, lower response, delayed orgasm, dryness — clinicians call it Genitourinary Syndrome of Menopause (GSM). Self-stimulators are recognized in international consensus alongside lubrication and pelvic floor therapy.</p>
+            <div class="evidence-citation">Simon et al. 2025 · 8 specialists, 7 countries</div>
+          </div>
+          <div class="evidence-item">
+            <h4>🎗️ CANCER RECOVERY</h4>
+            <p>Many people in recovery use external stimulation to keep arousal pathways active during treatment-related changes — in conversation with their oncology and gyn team.</p>
+            <div class="evidence-citation">Dubinskaya et al. 2024 · Cedars-Sinai</div>
+          </div>
+          <div class="evidence-item">
+            <h4>💊 MEDICATION</h4>
+            <p>SSRIs, blood-pressure meds, and hormonal birth control can dampen arousal. A systematic review of 17 studies puts vibratory stimulation in the pelvic floor wellness toolkit.</p>
+            <div class="evidence-citation">Dubinskaya et al. 2023 · 17-study review</div>
+          </div>
+          <p class="evidence-disclaimer">Lem Play™ is a wellness device, not FDA-cleared as a treatment. Talk with your physician about your situation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABS SECTION (How to Use / Specs / Intensity / Discreetness / Couples Play) -->
+  <section class="tabs-section">
+    <div class="section-tabs-row" role="tablist">
+      <button class="section-tab active" onclick="switchTab(this,'panel-howto')" role="tab">How to Use</button>
+      <button class="section-tab" onclick="switchTab(this,'panel-specs')" role="tab">Specifications</button>
+      <button class="section-tab" onclick="switchTab(this,'panel-intensity')" role="tab">Intensity Levels</button>
+      <button class="section-tab" onclick="switchTab(this,'panel-discreet')" role="tab">Discreetness</button>
+      <button class="section-tab" onclick="switchTab(this,'panel-couples')" role="tab">Couples Play</button>
+    </div>
+
+    <!-- How to Use -->
+    <div id="panel-howto" class="tab-panel active">
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-num">1</div>
+          <div class="how-icon">📱</div>
+          <div class="how-title">Download the App</div>
+          <div class="how-desc">Download the Nancy Play app on iOS or Android. Create your free account in under 2 minutes.</div>
+        </div>
+        <div class="how-card">
+          <div class="how-num">2</div>
+          <div class="how-icon">🔵</div>
+          <div class="how-title">Pair via Bluetooth</div>
+          <div class="how-desc">Turn on Lem Play and connect it to your phone via Bluetooth through the Nancy Play app.</div>
+        </div>
+        <div class="how-card">
+          <div class="how-num">3</div>
+          <div class="how-icon">🌀</div>
+          <div class="how-title">Pick Your Pattern</div>
+          <div class="how-desc">Explore 12 unique intensities and patterns on your own — or let your partner surprise you through the app.</div>
+        </div>
+        <div class="how-card">
+          <div class="how-num">4</div>
+          <div class="how-icon">💑</div>
+          <div class="how-title">Share the Controls</div>
+          <div class="how-desc">Invite your partner in the app to take control from anywhere in the world via app + internet.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs -->
+    <div id="panel-specs" class="tab-panel">
+      <table class="specs-table">
+        <tbody>
+          <tr><td>Product Name</td><td>Lem Play Clitoral Massager</td></tr>
+          <tr><td>SKU</td><td>NVIB-LBT-2611Y</td></tr>
+          <tr><td>Connectivity</td><td>Bluetooth 5.0 + Nancy Play App</td></tr>
+          <tr><td>App Compatibility</td><td>iOS 13+ · Android 8.0+</td></tr>
+          <tr><td>Intensities &amp; Patterns</td><td>12 unique levels</td></tr>
+          <tr><td>Battery Life</td><td>60–90 minutes use · ~2 hrs to full charge</td></tr>
+          <tr><td>Charging Port</td><td>USB-C &amp; Magnetic compatible</td></tr>
+          <tr><td>Waterproof Rating</td><td>IPX7 (fully submersible up to 1m)</td></tr>
+          <tr><td>Material</td><td>Body-safe, medical-grade silicone</td></tr>
+          <tr><td>Noise Level</td><td>&lt;40 dB (whisper-quiet)</td></tr>
+          <tr><td>Partner Control Range</td><td>Unlimited (via the Nancy Play app + internet)</td></tr>
+          <tr><td>MSRP</td><td>$99 USD</td></tr>
+          <tr><td>In the Box</td><td>Lem Play, USB-C charging cable, drawstring pouch, quickstart card</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Intensity -->
+    <div id="panel-intensity" class="tab-panel">
+      <p style="margin-bottom: 28px; font-size: 15px; color: var(--dark-60); max-width: 680px;">
+        Lem Play features 12 unique intensities and patterns — from a barely-there whisper to deep, powerful pulses. Explore solo or let your partner navigate them through the app.
+      </p>
+      <div class="intensity-grid">
+        <div class="intensity-card"><div class="i-icon">〰️</div><div class="i-name">1–2 · Gentle</div><div class="i-desc">Perfect for first-timers &amp; warm-up</div></div>
+        <div class="intensity-card"><div class="i-icon">🌊</div><div class="i-name">3–5 · Rhythmic</div><div class="i-desc">Rolling waves with a beautiful build</div></div>
+        <div class="intensity-card"><div class="i-icon">⚡</div><div class="i-name">6–9 · Pulsing</div><div class="i-desc">Deep, focused pulses that escalate</div></div>
+        <div class="intensity-card"><div class="i-icon">🔥</div><div class="i-name">10–12 · Intense</div><div class="i-desc">Full-power for experienced explorers</div></div>
+      </div>
+    </div>
+
+    <!-- Discreetness -->
+    <div id="panel-discreet" class="tab-panel">
+      <div class="discreet-grid">
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 30px; margin-bottom: 16px;">Discretion is our thing.</h3>
+          <p style="color: var(--dark-60); font-size: 15px; line-height: 1.75; margin-bottom: 16px;">Lem Play ships in plain, unbranded packaging. No "Nancy." No "Massager." Just a boring brown box that tells the world absolutely nothing about what's inside.</p>
+          <p style="color: var(--dark-60); font-size: 15px; line-height: 1.75;">At under 40 dB — quieter than a library whisper — Lem Play operates without drawing attention. Roommates, housemates, thin walls: not a problem.</p>
+        </div>
+        <div class="discreet-list">
+          <div class="discreet-item"><span class="di">📦</span><span>Plain, unbranded outer packaging</span></div>
+          <div class="discreet-item"><span class="di">🔇</span><span>Under 40 dB (whisper-quiet)</span></div>
+          <div class="discreet-item"><span class="di">💳</span><span>Discreet billing descriptor</span></div>
+          <div class="discreet-item"><span class="di">🔵</span><span>App-controlled — no suspicious buttons to explain</span></div>
+          <div class="discreet-item"><span class="di">🎁</span><span>Free mystery gift in every order</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Couples Play -->
+    <div id="panel-couples" class="tab-panel">
+      <div class="couples-grid">
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 30px; margin-bottom: 16px;">Play together, from anywhere.</h3>
+          <p style="color: var(--dark-60); font-size: 15px; line-height: 1.75; margin-bottom: 16px;">With the Nancy Play app, your partner can take control of Lem Play from anywhere in the world — same city or different continent. All you need is an internet connection.</p>
+          <p style="color: var(--dark-60); font-size: 15px; line-height: 1.75; margin-bottom: 16px;"><strong>How it works:</strong> Lem Play connects to your phone via Bluetooth. The Nancy Play app then links your phone to your partner's phone via the internet — giving them real-time control over patterns and intensity, no matter where they are.</p>
+          <div class="how-note">
+            💡 <strong>Note:</strong> Long-distance partner control works through the app + internet connection. Bluetooth is the local link between Lem Play and your phone.
+          </div>
+        </div>
+        <div class="couples-card">
+          <div class="cc-icon">💑</div>
+          <h4>Perfect for</h4>
+          <div class="couples-list">
+            <div class="couples-list-item"><span>✅</span><span>Long-distance couples</span></div>
+            <div class="couples-list-item"><span>✅</span><span>Spontaneous couple adventures</span></div>
+            <div class="couples-list-item"><span>✅</span><span>Adding intimacy during travel</span></div>
+            <div class="couples-list-item"><span>✅</span><span>Exploring partner-led pleasure</span></div>
+            <div class="couples-list-item"><span>✅</span><span>Surprising your partner mid-date</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERT SECTION -->
+  <section class="expert-section">
+    <h2>What the Experts Say</h2>
+    <p class="expert-sub">Trusted by medical professionals and sexual health experts</p>
+    <div class="expert-card">
+      <div class="expert-photo">👩‍⚕️</div>
+      <div>
+        <div class="expert-quote">
+          "As a doctor who focuses on sexual health, I frequently recommend the Lem as a high-quality, beginner-friendly suction toy. It's particularly useful for women who find they become less responsive to vibration. The Lem Play's connectivity opens exciting possibilities for couple therapy as well."
+        </div>
+        <div class="expert-name">Dr. Angela Wright</div>
+        <div class="expert-cred">GP, Clinical Sexologist, and BMS Registered Menopause Specialist</div>
+        <span class="verified-chip">✓ Clinically Supported</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINICAL STATS -->
+  <section class="stats-section">
+    <div class="stats-inner">
+      <h2>Why Lem Play is in the clinical toolkit.</h2>
+      <p class="stats-p">Self-stimulators sit in the same toolkit as lubrication and pelvic floor therapy — recognized in international consensus, supported by mechanism research, and studied across populations whose arousal pathways have changed.</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">8</div>
+          <div class="stat-lbl">specialists, 7 countries<br><span class="stat-cite">2025 international consensus on menopause-related sexual symptoms (Simon et al.)</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">17</div>
+          <div class="stat-lbl">studies on pelvic floor<br><span class="stat-cite">Systematic review concluding vibrators belong in the pelvic-floor wellness toolkit (Dubinskaya et al. 2023)</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">132</div>
+          <div class="stat-lbl">studies of arousal<br><span class="stat-cite">Meta-analysis showing women's physical arousal is largely automatic (Chivers et al. 2010)</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">6</div>
+          <div class="stat-lbl">peer-reviewed papers<br><span class="stat-cite">Curated by Hello Nancy and Dr. Angela Wright, MD — read the full bibliography</span></div>
+        </div>
+      </div>
+      <div class="stats-cta">
+        <button class="btn-outline-white">View the full clinical evidence →</button>
+      </div>
+      <p class="stats-disclaimer">Lem Play™ is a wellness device. Not FDA-cleared as a treatment for any specific clinical condition. Statements above describe published research on the broader category of external clitoral stimulation. For informational purposes only — talk to a qualified healthcare provider about your situation.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-section">
+    <h2>Join 800,000+ Women</h2>
+    <p class="reviews-sub">Who Decided to Come First</p>
+
+    <div class="filter-tabs">
+      <button class="filter-tab active">Powerful &amp; Effective</button>
+      <button class="filter-tab">Cute Design</button>
+      <button class="filter-tab">Discreet</button>
+      <button class="filter-tab">App-Controlled</button>
+      <button class="filter-tab">Couples Approved</button>
+      <button class="filter-tab">Beginner-Friendly</button>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Holy mother of God! I can't put this little sucker down. The app control my partner uses is just… words can't describe. He's in another country and yet here we are."</div>
+        <div class="review-author">— Kathryn R.</div>
+        <div class="review-verified">✓ Verified Buyer</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"I don't even need the highest speeds — the lower ones build beautifully. And when my partner takes over through the app? The surprise patterns he sends are electric. Deeply bonding, somehow."</div>
+        <div class="review-author">— Pebbs W.</div>
+        <div class="review-verified">✓ Verified Buyer</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"It is amazing and super powerful — setting 3 already has me floored. My wife loves it and now that I can control it through the app from my phone, it's changed our whole relationship."</div>
+        <div class="review-author">— Melissa E.</div>
+        <div class="review-verified">✓ Verified Buyer</div>
+      </div>
+    </div>
+
+    <div class="tiktok-grid">
+      <div class="tiktok-card" style="background: linear-gradient(160deg, #2d1b4e 0%, #1a0a30 100%);">
+        <div class="tiktok-bg">🍋</div>
+        <div class="tiktok-play">▶</div>
+        <div class="tiktok-caption">"Ohhhh Lem Play, oh Lem Play…"</div>
+      </div>
+      <div class="tiktok-card" style="background: linear-gradient(160deg, #1a2f1a 0%, #0d1f0d 100%);">
+        <div class="tiktok-bg">📱</div>
+        <div class="tiktok-play">▶</div>
+        <div class="tiktok-caption">"He's in Paris, I'm in Manila, and somehow this still works."</div>
+      </div>
+      <div class="tiktok-card" style="background: linear-gradient(160deg, #3d1a1a 0%, #1f0d0d 100%);">
+        <div class="tiktok-bg">💜</div>
+        <div class="tiktok-play">▶</div>
+        <div class="tiktok-caption">"She looks innocent… but she's about to get zesty."</div>
+      </div>
+      <div class="tiktok-card" style="background: linear-gradient(160deg, #1a1a3d 0%, #0d0d1f 100%);">
+        <div class="tiktok-bg">🌀</div>
+        <div class="tiktok-play">▶</div>
+        <div class="tiktok-caption">"Let's break the taboo around self pleasure."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="comparison-section">
+    <div class="comparison-inner">
+      <h2>US vs Them</h2>
+      <p class="comp-sub">Not overhyped or overpriced. Just the best connected vibes one can get.</p>
+      <p class="comp-meta">Verified comparison based on real customer reviews and product specifications.</p>
+
+      <div class="comp-tabs">
+        <button class="ct-tab active">vs Other Bluetooth Vibrators</button>
+        <button class="ct-tab">vs Traditional Vibrators</button>
+      </div>
+
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="us">LEM PLAY<br><small style="font-weight:400;opacity:0.75">by Nancy</small></th>
+            <th>LOVENSE<br><small style="font-weight:400;opacity:0.75">Lush 3</small></th>
+            <th>WE-VIBE<br><small style="font-weight:400;opacity:0.75">Moxie+</small></th>
+            <th>SATISFYER<br><small style="font-weight:400;opacity:0.75">Connect</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Trustpilot Score</td><td class="us-col"><strong>4.8 ⭐</strong></td><td>4.2 (Good)</td><td>3.8 (Average)</td><td>1.9 (Poor)</td></tr>
+          <tr><td>App + Partner Control</td><td class="us-col"><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td></tr>
+          <tr><td>Air Pulse Technology</td><td class="us-col"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td></tr>
+          <tr><td>Medical-Grade Silicone</td><td class="us-col"><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="cn">Varies</span></td></tr>
+          <tr><td>Discreet Design</td><td class="us-col"><span class="ck">✓</span></td><td><span class="cn">Moderate</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td></tr>
+          <tr><td>Beginner-Friendly</td><td class="us-col"><span class="ck">✓</span></td><td><span class="cn">Moderate</span></td><td><span class="ck">✓</span></td><td><span class="cn">Moderate</span></td></tr>
+          <tr><td>Noise Level</td><td class="us-col">Whisper-Quiet<br><small>&lt;40 dB</small></td><td>Quiet</td><td>Quiet</td><td>Moderate</td></tr>
+          <tr><td>Discreet Packaging</td><td class="us-col"><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td></tr>
+          <tr><td>Free Shipping + Mystery Gift</td><td class="us-col"><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="comp-cta">
+        <p>Experience the Lem Play difference with our 30-day satisfaction guarantee</p>
+        <button class="btn-primary-inline">ADD TO CART — $99</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>FAQ's</h2>
+    <p class="faq-sub">Curious to learn more? We've got you covered. Head to our <a href="#" style="color: var(--pink);">Nancy Help Center</a> for everything you need to know.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is Lem Play and how is it different from the original Lem?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Lem Play is the Bluetooth-enabled version of the original Lem Clitoral Massager. It shares the same award-winning air pulse technology, medical-grade silicone body, and 12 unique intensities — but adds Bluetooth connectivity and compatibility with the Nancy Play app, giving you or your partner control from anywhere in the world.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How does long-distance partner control work?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Lem Play connects to your phone via Bluetooth. Your phone then links to your partner's phone through the Nancy Play app via the internet — allowing them to control the patterns and intensity of Lem Play in real time from anywhere in the world. Both phones just need an internet connection.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What devices are compatible with the Nancy Play app?<span class="faq-icon">+</span></button>
+        <div class="faq-a">The Nancy Play app is available on iOS (version 13 and above) and Android (version 8.0 and above). It's free to download from the App Store and Google Play.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is the battery life of Lem Play?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Lem Play provides 60–90 minutes of use on a full charge, depending on intensity level. Charging takes approximately 2 hours via the included USB-C cable.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is Lem Play waterproof?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes! Lem Play is rated IPX7 waterproof, meaning it can be fully submerged up to 1 metre of water for 30 minutes. Perfect for bath-time or shower adventures.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is your shipping policy?<span class="faq-icon">+</span></button>
+        <div class="faq-a">We offer free standard shipping on all orders. Orders are processed within 1–2 business days and typically arrive within 5–7 business days. Express shipping is available at checkout for faster delivery.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is your packaging discreet?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Absolutely. All orders ship in plain, unbranded packaging with no mention of Nancy, Lem Play, or anything that reveals the contents. Your billing statement will show an equally discreet descriptor.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What if I am not satisfied with my purchase?<span class="faq-icon">+</span></button>
+        <div class="faq-a">We stand behind Lem Play with a 30-day satisfaction guarantee. If you're not completely happy for any reason, contact us within 30 days of delivery and we'll make it right — no awkward questions asked.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="related-section">
+    <div class="related-inner">
+      <h2>You might also love</h2>
+      <div class="related-grid">
+        <div class="related-card">
+          <div class="related-img">🍭</div>
+          <div class="related-info">
+            <div class="related-badge">SAVE $43</div>
+            <div class="related-name">Lolly Mini Wand</div>
+            <div class="related-desc">A versatile mini wand for steady vibrations that hit every right spot.</div>
+            <div class="related-price-row"><span class="related-price">$44.00</span><span class="related-orig">$87.00</span></div>
+          </div>
+        </div>
+        <div class="related-card">
+          <div class="related-img">🥑</div>
+          <div class="related-info">
+            <div class="related-badge">SAVE $63</div>
+            <div class="related-name">Avo Clitoral Massager</div>
+            <div class="related-desc">A turbocharged clit suction with unmatched sensations for deep, powerful stimulation.</div>
+            <div class="related-price-row"><span class="related-price">$62.00</span><span class="related-orig">$125.00</span></div>
+          </div>
+        </div>
+        <div class="related-card">
+          <div class="related-img">🎁</div>
+          <div class="related-info">
+            <div class="related-badge">SAVE $125</div>
+            <div class="related-name">Oh-Oh-Oh Triple Bundle</div>
+            <div class="related-desc">The ultimate triple threat featuring air-suction, rumbly vibrations, and a sleek bullet.</div>
+            <div class="related-price-row"><span class="related-price">$125.00</span><span class="related-orig">$250.00</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <h2>Stories &amp; surprises straight to your inbox 💌</h2>
+    <p>Be the first to enjoy product launches, sweet discounts, and insider treats.</p>
+    <div class="nl-form">
+      <input type="email" class="nl-input" placeholder="Email address">
+      <button class="nl-btn">Subscribe</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Nancy</h3>
+          <p>At Nancy, we're committed to breaking the taboo and creating a safe and welcoming space for everyone to explore their sexual curiosities.</p>
+          <address>
+            Care &amp; Bloom Limited,<br>
+            2F, Hilltop Plaza,<br>
+            49 Hollywood Rd, Central,<br>
+            Hong Kong.
+          </address>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="mailto:care@hellonancy.com">care@hellonancy.com</a></li>
+            <li><a href="mailto:marketing@hellonancy.com">marketing@hellonancy.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">Lem Play Comparison</a></li>
+            <li><a href="#">Wall of Came</a></li>
+            <li><a href="#">Sex Ed</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026, Hello Nancy | All rights reserved</span>
+        <span>🇺🇸 USD ($)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchImage(thumbEl, src) {
+      document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      thumbEl.classList.add('active');
+      const mainImg = document.getElementById('main-img');
+      const placeholder = document.getElementById('gallery-placeholder');
+      if (mainImg) {
+        mainImg.style.display = 'block';
+        mainImg.src = src;
+        if (placeholder) placeholder.style.display = 'none';
+        mainImg.onerror = function() {
+          this.style.display = 'none';
+          if (placeholder) placeholder.style.display = 'flex';
+        };
+      }
+    }
+
+    function switchTab(btn, panelId) {
+      document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const panel = document.getElementById(panelId);
+      if (panel) panel.classList.add('active');
+    }
+
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    function makeTabGroup(selector) {
+      document.querySelectorAll(selector).forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll(selector).forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+        });
+      });
+    }
+    makeTabGroup('.filter-tab');
+    makeTabGroup('.ct-tab');
+  </script>
+
+</body>
+</html>
